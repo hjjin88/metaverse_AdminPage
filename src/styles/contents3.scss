@@ -1,0 +1,94 @@
+.LtTopBar.Admin{
+font-weight: 700;
+font-size: 24px;
+line-height: 100%;
+color: #000;
+background: #fff;
+opacity: 1;
+gap: 29px;
+align-items: unset;
+border-bottom: 1px solid #eee;
+}
+.LtTopBar.Admin::before{
+display: none;
+}
+
+
+.Admin_BtBar{
+    @include BtLtCon(20px, 50%, 6);
+    transform: translateX(-50%);
+    @include flexCol(0);
+    width: 100%;
+  
+    &-Con {
+      @include flexCtr(30px);
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 100%;
+      color: #333;
+  
+      button {
+        @include flexCol(5px);
+        img{
+          filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.07));
+        }
+      }
+    }
+  }
+.scroll_wrap{
+  overflow-x: auto;
+}
+.scroll_wrap>table {
+  min-width: 1000px;
+}
+.table_list {
+  width: 100%;
+}
+table {
+  table-layout: fixed;
+  border-spacing: 0;
+  border: 0;
+}
+  // @media (max-width: 1200px) {
+
+  // }
+  .AdminCont{
+    padding: 40px 0 0 86px;
+  }
+.AdminCon{
+  // width: 1404px;
+  // height: 781px;
+  background: #F8F8F8;
+  border-radius: 27px;
+  max-width: calc(100% - 150px);
+    height: 650px;
+    overflow-x: auto;
+    padding: 0 40px;
+    text-align: left;
+}
+
+thead th{
+  padding: 21px 0;
+font-weight: 700;
+font-size: 18px;
+color: rgba(32, 32, 32, 0.5);
+border-bottom: 1px solid #eee;
+}
+tbody td{
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+  opacity: 0.5;
+}
+thead th:nth-of-type(1), tbody td:nth-of-type(1){
+  width: 40%;
+}
+thead th:nth-of-type(2), tbody tr td:nth-of-type(2){
+  width: 30%;
+}
+thead th:nth-of-type(3), tbody tr td:nth-of-type(3){
+  width: 30%;
+}
+
+
+
+

@@ -1,0 +1,144 @@
+// Layout
+.wrap.Admin {
+    display: flex;
+}
+// Lnb 
+.AdminScreenLnbs {
+    width: 280px;
+    min-height: 100vh;
+    flex-shrink: 0;
+    margin-top: 60px;
+    padding: 28px 0 0 29px;
+    background: #f8f8f8;
+    color: #000;
+    box-sizing: border-box;
+    @include flexCol03(30px);
+    div {       
+        @include txt700(18px, #000);        
+        cursor: pointer;        
+        &.Tab-On {
+            color: #8265F6;
+        }
+    }
+    .SubTab {
+        @include flexCol03(30px);
+        padding-left: 9px;
+    }
+}
+// content
+.AdminCont {
+    width: 100%;
+    margin-top: 60px;
+    padding: 40px 150px 132px 86px;
+    background: #fff;
+    color: #000;
+    box-sizing: border-box;
+}
+// button
+.AdminBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    width: 136px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    &.small {width: 123px;}
+    &.on {
+        background: #8265F6;
+        color: #fff;
+    }
+    &.on02 {
+        background: #FFFFFF;
+        border: 1px solid #8265F6;
+        color: #8265F6;
+    }
+    &.off {
+        background: #D9D9D9;
+        color: #fff;
+    }
+}
+.AdminBtn-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.left {justify-content: flex-start;}
+    &.right {justify-content: flex-end;}
+    button {
+        &+button {margin-left: 10px;}
+    }
+}
+// title
+.AdminTit {
+    @include txt700(24px, #000);
+    margin: 0 0 40px 20px;
+}
+.AdminStit {
+    @include txt700(20px, #000);
+    margin-left: 20px;
+}
+
+// 개별 contents
+.SpaceAdmin {
+    .space-list {
+        &-wrap {
+            padding: 30px 5px 30px 30px;
+            background: #F8F8F8;
+            border-radius: 27px;        
+        }
+        &-inner {
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: 500px;
+            padding-right: 25px;
+        }
+        &-cont {
+            li {
+                @include flexArCtr(20px);
+                padding: 20px 0;
+                &+li {
+                    border-top: 1px solid #EEEEEE;
+                }
+                &:first-child {
+                    padding-top: 0;
+                }
+                &:last-child {
+                    border-bottom: 1px solid #EEEEEE;
+                }
+            }
+        }
+        &-tit {
+            min-width: 234px;
+            @include txt500(18px, #202020);
+        }
+        &-search {
+            @include flexArCtr(10px);
+            width: 100%;
+            input {
+                width: 100%;
+                height: 40px;
+                padding: 12px 16px;
+                background: #FFFFFF;
+                border: 1px solid #EBEBEB;
+                border-radius: 5px;
+                color: #454545;
+                font-size: 16px;
+                font-weight: 400;
+                letter-spacing: 0.02em;
+            }
+            button {
+                flex-shrink: 0;
+                width: 40px;
+                height: 40px;
+                background: #FFFFFF;
+                border: 1px solid #888888;
+                border-radius: 8px;
+            }
+        }
+    }
+}

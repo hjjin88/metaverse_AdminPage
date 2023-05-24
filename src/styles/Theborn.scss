@@ -1,0 +1,274 @@
+html {
+  width: 100%;
+  height: 100vh;
+  background: url($res_root + "/resources/img/tb_bg.png") center no-repeat;
+  color: #fff;
+}
+
+// 퀘스트 창
+.Quest {
+  @include LtCon(40%, 0, 5);
+  transform: translateY(-50%);
+  dl {
+    .mission {
+      position: relative;
+      @include flexArCtr(0);
+      @include bg("tb_quest_bg");
+      height: 40px;
+      width: 300px;
+      padding-left: 41px;
+      &::before {
+        content: "";
+        @include bg("mission");
+        position: absolute;
+        top: 8px;
+        left: 9px;
+        width: 25px;
+        height: 25px;
+      }
+    }
+    .mission.clear {
+      &::before {
+        @include bg("mission_clear");
+      }
+    }
+    dd {
+      @include flexArCtr(0);
+      height: 40px;
+      width: 300px;
+      padding-left: 41px;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+  }
+}
+.Stamp {
+  @include LtCon(50%, 50%, 11);
+  transform: translate(-50%, -50%);
+  @include bg("stamp_bg");
+  width: 1189px;
+  height: 549px;
+
+  .subclose-out {
+    top: 50px;
+  }
+
+  &-con {
+    display: flex;
+    gap: 0;
+    height: 549px;
+    &-left {
+      width: 386.43px;
+      @include flexCol(12px);
+      c
+      .tit {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 100%;
+        color: #cb9200;
+      }
+      .time {
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 100%;
+        color: #001f60;
+      }
+      .txt {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        color: #cb9200;
+      }
+      .loading_bar {
+        overflow: hidden;
+        position: relative;
+        margin: 0 auto;
+        border-radius: 16px;
+        &_img {
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+    &-right {
+      @include flexCol03(102px);
+      padding: 87px 52px 39px 52px;
+      &-list {
+        display: flex;
+        flex-wrap: wrap;
+        height: 283px;
+        gap: 29px 18px;
+        li {
+          @include flexCtr(0);
+          width: 125px;
+        }
+      }
+      &-desc {
+        width: fit-content;
+        margin: 0 auto;
+        li {
+          padding-bottom: 8px;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 100%;
+          text-align: left;
+          color: #787878;
+          &::before {
+            content: "· ";
+          }
+        }
+      }
+    }
+  }
+}
+.Pop {
+  @include LtCon(50%, 50%, 11);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  color: #222;
+  &-ty01 {
+    width: 335px;
+    padding: 30px 0 22px;
+  }
+  &-ty02 {
+    width: 600px;
+    height: 400px;
+  }
+  &-ty03 {
+    width: 600px;
+    height: 900px;
+  }
+  &-tit {
+    font-weight: 700;
+    font-size: 17px;
+    &-01 {
+      @extend .Pop-tit;
+      padding: 0 0 25px;
+    }
+    &-02 {
+      @extend .Pop-tit;
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+    }
+  }
+  &-txt {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: #555;
+  }
+  &-btn {
+    background: #8265f6;
+    border-radius: 999px;
+    color: #fff;
+    &-01 {
+      @extend .Pop-btn;
+      width: 122px;
+      height: 42px;
+      font-weight: 400;
+      font-size: 15px;
+      margin-top: 26px;
+    }
+    &-02 {
+      @extend .Pop-btn;
+      width: 335px;
+      height: 55px;
+      font-weight: 400;
+      font-size: 20px;
+      margin: 21px auto 29px;
+      &-red {
+        @extend .Pop-btn-02;
+        background: #e42122;
+      }
+    }
+  }
+  &-img {
+    position: relative;
+    margin: 0 auto;
+    padding: 16px 0 3px;
+    &-inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &-txt {
+      font-weight: 700;
+      font-size: 14px;
+      color: #fff;
+      &-01 {
+        @extend .Pop-img-txt;
+        @include LtCon(50%, 50%, 0);
+        transform: translate(-50%, -50%);
+        margin-top: 7px;
+      }
+      &-02 {
+        @extend .Pop-img-txt;
+        @include LtCon(72%, 50%, 0);
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  .hspc_kiosk_banner img {
+    width: 100%;
+  }
+  .kiosk {
+    height: calc(100% - 95px);
+    background: #feb700;
+    border-radius: 0 0 10px 10px;
+    .kiosk-tit {
+      width: 100%;
+      padding: 16.17px 20px 15.5px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 18px;
+      color: #fff;
+    }
+    .kiosk-list {
+      @include flexArCtr(8.33px 6.87px);
+      flex-wrap: wrap;
+      width: 100%;
+      padding: 22.5px 10px 0;
+      background: #fff;
+      &-item {
+        width: 32.5%;
+        @include flexCol(0);
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        p {
+          @include flexCtr(0);
+          width: 188.84px;
+          height: 71.67px;
+          background: #e42122;
+          font-weight: 700;
+          font-size: 15px;
+          color: #fff;
+        }
+      }
+      .center {
+        margin: 0 auto;
+        .Pop-btn-02-red {
+          margin-top: 64px;
+          margin-bottom: 22.5px;
+        }
+      }
+    }
+  }
+}
+
+.paikdb_ico {
+  position: absolute;
+  top: 19px;
+  right: 547px;
+  z-index: 11;
+  .new {
+    position: absolute;
+    top: 4px;
+    right: -4px;
+  }
+}

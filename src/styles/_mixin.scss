@@ -1,118 +1,244 @@
-
 $res_root: 'http://localhost:3000';
 
+@mixin txt700($size,$color){font-weight: 700;line-height: 100%;font-size: $size;color: $color;}
+@mixin txt600($size,$color){font-weight: 600;line-height: 100%;font-size: $size;color: $color;}
+@mixin txt500($size,$color){font-weight: 500;line-height: 100%;font-size: $size;color: $color;}
+@mixin txt400($size,$color){font-weight: 400;line-height: 100%;font-size: $size;color: $color;}
+@mixin txt300($size,$color){font-weight: 300;line-height: 100%;font-size: $size;color: $color;}
 
 // 백그라운드 
-@mixin bg($name, $path: $res_root +"/resources/images/", $format: "png") {
-    background: url("#{$path}#{$name}.#{$format}") center no-repeat;
-    border: none;
+@mixin bg($name, $path: $res_root +"/resources/img/", $format: "svg", $locat: "center no-repeat") {
+  background: url("#{$path}#{$name}.#{$format}") #{$locat};
+  border: none;
+}
+
+@mixin ico($name, $path: $res_root +"/resources/img/", $format: "svg") {
+  background: url("#{$path}#{$name}.#{$format}") center no-repeat;
+  overflow: hidden;
+  color: transparent;
+  vertical-align: middle;
+  background-color: #fff;
+}
+
+// absolute
+@mixin RtCon($top, $Rt, $zIndex) {
+  position: absolute;
+  top: $top;
+  right: $Rt;
+  z-index: $zIndex;
+}
+
+@mixin LtCon($top, $Lt, $zIndex) {
+  position: absolute;
+  top: $top;
+  left: $Lt;
+  z-index: $zIndex;
+}
+
+@mixin BtLtCon($Bt, $Lt, $zIndex) {
+  position: absolute;
+  bottom: $Bt;
+  left: $Lt;
+  z-index: $zIndex;
+}
+
+@mixin BtRtCon($Bt, $Rt, $zIndex) {
+  position: absolute;
+  bottom: $Bt;
+  right: $Rt;
+  z-index: $zIndex;
+}
+
+// flex
+@mixin flexArCtr($gap) {
+  display: flex;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin flexCtr($gap) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin flexCol($gap) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin flexCol02($gap) {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin flexCol03($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin flexCol04($gap) {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin flexSb($gap) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $gap;
+}
+
+@mixin flexSa($gap) {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: $gap;
+}
+
+@mixin flexFs($gap) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: $gap;
+}
+
+// 말줄임
+@mixin ellipsis($line: 1) {
+  @if ($line ==1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
-  
-  // absolute
-  @mixin RtCon($top, $Rt, $zIndex) {
-    position: absolute;
-    top: $top;
-    right: $Rt;
-    z-index: $zIndex;
+
+  @else {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
   }
-  
-  @mixin LtCon($top, $Lt, $zIndex) {
-    position: absolute;
-    top: $top;
-    left: $Lt;
-    z-index: $zIndex;
-  }
-  
-  @mixin BtLtCon($Bt, $Lt, $zIndex) {
-    position: absolute;
-    bottom: $Bt;
-    left: $Lt;
-    z-index: $zIndex;
-  }
-  
-  @mixin BtRtCon($Bt, $Rt, $zIndex) {
-    position: absolute;
-    bottom: $Bt;
-    right: $Rt;
-    z-index: $zIndex;
-  }
-  
-  // flex
-  @mixin flexArCtr($gap) {
-    display: flex;
-    align-items: center;
-    gap: $gap;
-  }
-  
-  @mixin flexCtr($gap) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: $gap;
-  }
-  
-  @mixin flexCol($gap) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: $gap;
-  }
-  
-  @mixin flexCol02($gap) {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: $gap;
-  }
-  
-  @mixin flexCol03($gap) {
-    display: flex;
-    flex-direction: column;
-    gap: $gap;
-  }
-  
-  @mixin flexCol04($gap) {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: $gap;
-  }
-  
-  @mixin flexSb($gap) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: $gap;
-  }
-  
-  @mixin flexSa($gap) {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: $gap;
-  }
-  
-  @mixin flexFs($gap) {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: $gap;
-  }
-  
-  // 말줄임
-  @mixin ellipsis($line: 1) {
-    @if ($line ==1) {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-  
-    @else {
-      display: -webkit-box;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: $line;
-    }
-  }
+}
+
+// 공통영역
+@mixin close($top, $Rt, $zIndex) {
+  position: absolute;
+  top: $top;
+  right: $Rt;
+  z-index: $zIndex;
+}
+
+// 우측 하단 팝업창
+@mixin popBtRt() {
+  overflow: hidden;
+  @include BtRtCon(0, 84px, 10);
+  width: 375px;
+  height: auto;
+  max-height: 860px;
+  color: #707070;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+}
+
+// 우측 중앙 팝업창
+@mixin popCenter() {
+  overflow: hidden;
+  @include RtCon(50%, 84px, 10);
+  transform: translateY(-50%);
+  border-radius: 20px;
+  width: 375px;
+  height: auto;
+  max-height: 860px;
+  color: #707070;
+  background: #fff;
+}
+
+// 메인 중앙 팝업창
+@mixin CenterCon() {
+  @include LtCon(50%, 50%, 10);
+  transform: translate(-50%, -50%);
+  width: 787px;
+  max-height: 800px;
+  overflow: hidden;
+  background: #FFFFFF;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+// 상단 중앙 팝업창
+@mixin popTopCenter() {
+  @include LtCon(0, 50%, 11);
+  transform: translateX(-50%);
+}
+
+// 마이 프로필 인풋 버튼 공통영역
+@mixin form-btn($color, $border) {
+  @include flexCtr(0);
+  width: 56px;
+  padding: 9px 0;
+  background: #fff;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 13px;
+  color: $color;
+  border: 1px solid $border;
+}
+
+@mixin AlarmCon() {
+  @include LtCon(50%, 50%, 10);
+  transform: translate(-50%, -50%);
+  width: 335px;
+  max-height: 800px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+@mixin MsgCon() {
+  @include LtCon(50%, 50%, 10);
+  transform: translate(-50%, -50%);
+  width: 579px;
+  height: 165px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 10px;
+}
+
+@mixin guidepop-01() {
+  @include LtCon(50%, 50%, 10);
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  @include flexCtr(0);
+  padding: 12px 27px;
+}
+
+@mixin guidepop-02() {
+  position: absolute;
+  // overflow: hidden;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50px;
+  @include flexCtr(0);
+}
+
+@mixin scroll($max-height) {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: $max-height;
+}
+
+
+

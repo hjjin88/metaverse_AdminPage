@@ -1,0 +1,68 @@
+// 아이콘 이미지 공통 영역
+.mikeOff{@include bg('mikeOff20');width:16px;height: 20px;}
+.mikeOn{@include bg('mikeOn20');width:16px;height: 20px;}
+.camOff{@include bg('camOff20');width:16px;height: 20px;}
+.camOn{@include bg('camOn20');width:16px;height: 20px;}
+.videoOn30{@include bg('videoOn30');width: 30px;height: 30px;}
+.videoOff30{@include bg('videoOff30');width: 30px;height: 30px;}
+.mikeOn30{@include bg('mikeOn30');width: 30px;height: 30px;}
+.mikeOff30{@include bg('mikeOff30');width: 30px;height: 30px;}
+.downArrow{@include bg('downArrow12');width: 12px;height: 12px;position: absolute;top: 13px;right: 15px;}
+.downArrow.up{transform: scaleY(-1);}
+.downArrowWt12{@include bg('downArrowWt12');width: 12px;height: 12px;position: absolute;top: 20px;right: 21px;}
+.downArrowWt12.up{transform: scaleY(-1);}
+.triArrowWt{display: inline-block;@include bg('triArrowWt');width:12px;height:12px;}
+.triArrowWt.up{transform: scaleY(-1);}
+.stop12{@include bg('stop12');width: 12px;height: 14px;}
+.play12{@include bg('play12');width: 12px;height: 12px;}
+.favoritesOn12{@include bg('FavoritesOn12');width: 12px;height: 12px;}
+.favoritesOff12{@include bg('FavoritesOff12');width: 12px;height: 12px;}
+.locationBtnOn40{@include bg('locationBtnOn40');width: 40px;height: 40px;}
+.locationBtnOff40{@include bg('locationBtnOff40');width: 40px;height: 40px;}
+.mapCurrentLocation40{@include bg('mapCurrentLocation40');width: 40px;height: 40px;}
+.zoomIn{@include bg('zoomIn');width: 14px;height: 14px;}
+.zoomOut{@include bg('zoomOut');width: 14px;height: 14px;}
+.personFirst24{@include bg('personFirst24');width: 24px;height: 24px;}
+.person3rd24{@include bg('person3rd24');width: 24px;height: 24px;}
+.speakerOn24{@include bg('speakerOn24');width: 24px;height: 24px;}
+.speakerOff24{@include bg('speakerOff24');width: 24px;height: 24px;}
+.close24{@include bg('close24');width: 24px;height: 24px;}
+.search24{@include bg('search24');width: 24px;height: 24px;}
+.close16{@include bg('close16');width: 16px;height: 16px;}
+.closeWt16{@include bg('closeWt16');width: 16px;height: 16px;}
+.closeWt12{@include bg('closeWt12');width: 12px;height: 12px;}
+.close12{@include bg('close12');width: 12px;height: 12px;}
+.Enter20{@include bg('Enter20');width: 20px;height: 20px;}
+.EnterOn20{@include bg('EnterOn20');width: 20px;height: 20px;}
+.camera18{@include bg('camera18');width: 18px;height: 16px;}
+.copy17{@include bg('copy17');width: 17px;height: 17px;}
+.skip12{@include bg('skip12');width: 12px;height: 12px;}
+.copy20{@include bg('copy20');width: 20px;height: 20px;}
+.exit24{@include bg('exit24');width: 24px;height: 24px;}
+.exit24_bk{@include bg('exit24_bk');width: 24px;height: 24px;}
+.exitBk24{@include bg('exitBk24');width: 24px;height: 24px;}
+.hamburgerMenu24{@include bg('hamburgerMenu24');width: 24px;height: 24px;}
+.privateScreen24{@include bg('privateScreen24');width: 24px;height: 24px;}
+.zoom20{@include bg('zoom20');width: 20px;height: 20px;}
+.zoomOut20{@include bg('zoomOut20');width: 20px;height: 20px;}
+.plus16{@include bg('plus16');width: 16px;height: 16px;}
+.subjectCheck16{@include bg('subjectCheck');width: 16px;height: 16px;}
+.correction16{@include bg('correction16');width: 16px;height: 16px;}
+.write16{@include bg('write16');width: 16px;height: 16px;}
+.rightArrow16{@include bg('rightArrow16');width: 6px;height: 12px;}
+.leftArrow16{@include bg('leftArrow16');width: 6px;height: 12px;}
+.closeGy20{@include bg('closeGy20');width: 20px;height: 20px;}
+.repeatOn15{@include bg('repeatOn15');width: 16px;height: 18px;}
+.repeatOff15{@include bg('repeatOff15');width: 16px;height: 18px;}
+.shuffleOn15{@include bg('shuffleOn15');width: 18px;height: 15px;}
+.shuffleOff15{@include bg('shuffleOff15');width: 18px;height: 15px;}
+.Stop-pu12{@include bg('Stop-pu12');width: 12px;height: 14px;}
+.Play-gy12{@include bg('Play-gy12');width: 12px;height: 14px;}
+.error16{@include bg('error16');width: 16px;height: 16px;}
+.edit-pen{@include bg('edit-pen');width: 14px;height: 14px;}
+.copyWt17{@include bg('copyWt17');width: 17px;height: 17px;}
+.guide24{@include bg('guide24');width: 24px;height: 24px;}
+.checkbox-pu{@include bg('checkbox-pu');width: 15px;height: 15px;}
+.plus12{@include bg('plus12');width: 12px;height: 12px;}
+.paikdb_ico{@include bg('paikdb_ico');width: 30px;height: 53px;}
+.paikdb_ico_mo{@include bg('paikdb_ico');width: 25px;height: 44px;}

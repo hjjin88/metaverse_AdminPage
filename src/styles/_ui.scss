@@ -1,0 +1,768 @@
+html {
+  width: 100%;
+  height: 100vh;
+  background: url($res_root + '/resources/img/bg.png') center no-repeat;
+  color: #fff;
+}
+
+.wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.AroundAll.ClientListAll {
+  transform: translateY(-50%);
+}
+
+.Around,
+.AroundAll,
+.Emoji {
+  @include popBtRt();
+}
+
+.popCenter,
+.Chat,
+.ProfileView,
+.Voters {
+  @include popCenter();
+}
+
+.CtPop {
+  @include CenterCon();
+}
+
+.ConsProduce,
+.ConsEntrance,
+.NpcInstlReg,
+.Npc-instl,
+.Npc-guide,
+.Invite,
+.Announcement,
+.MyProfile,
+.MyFriend,
+.Follow,
+.Message,
+.MessageInner,
+.MyActivity,
+.MySetting {
+  @include CenterCon();
+  max-height: 633px;
+  height: auto;
+}
+
+.TopCtPop {
+  @include popTopCenter();
+}
+
+// 닫기 버튼
+.menuclose {
+  @include close(42px, 46px, 0);
+}
+
+.mapclose {
+  @include close(0, -20px, 10);
+  width: 50px;
+  height: 50px;
+  background: #fff;
+}
+
+.subclose {
+  @include close(15px, 20px, 1);
+}
+
+.subclose-out{
+  @include close(5px, -50px, 1);
+  width: 50px;
+  height: 50px;
+  background: #FFFFFF;
+}
+.entireclose {
+  @include close(34px, 34.1px, 0);
+}
+
+// 온오프 체크 
+[class*="mark"] {
+  @include LtCon(15px, 18px, 0);
+  width: 6px;
+  height: 6px;
+  border-radius: 100px;
+  border: 0;
+}
+
+.markOn {
+  background: #36FF03;
+}
+
+.markOff {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.markGy {
+  background: #E0E0E0;
+}
+
+.markRd {
+  background: #FF5358;
+}
+
+// 메시지 숫자 표기
+.-No {
+  @include LtCon(-1px, 17.5px, 0);
+  width: auto;
+  padding: 1px 3.5px 1.5px;
+  background: #FF5358;
+  border-radius: 30px;
+}
+
+// 팝업 배경
+.layer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.layer01 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #222;
+}
+
+// 팝업창 타이틀
+.popTit {
+  @include flexCtr(0);
+  width: 100%;
+  padding: 15px 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  color: #000;
+  border-bottom: 1px solid #eee;
+}
+
+// 우측 하단 팝업창 컨테이너
+.popCon {
+  overflow-y: scroll;
+  max-height: 844px;
+  margin: 30px 10px 30px 0;
+  padding: 0 15px 0 30px;
+}
+
+.popCon.ty-01 {
+  @include flexCol03(20px);
+  max-height: 527px;
+  margin-bottom: 20px;
+
+  .Profile-set {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .Profile-con {
+    @include flexArCtr(14px);
+  }
+
+  .popCon [class*="btn-L"] {
+    width: 335px;
+    padding: 17px;
+    margin: 0 20px 20px;
+  }
+}
+
+.Profile-set {
+  @include flexSb(0);
+
+  .AroundIconBox {
+    @include flexCtr(18px);
+  }
+
+  .AroundLists {
+    @include flexCtr(14px);
+  }
+
+  .Profile-mark {
+    @include LtCon(38px, 42px, 2);
+  }
+
+  .markOn,
+  .markOff {
+    @include LtCon(39px, 42px, 2);
+    width: 8px;
+    height: 8px;
+    border-radius: 100px;
+    border: 0;
+  }
+
+  .markOff {
+    background: rgba(102, 102, 102, 0.2);
+  }
+
+  .IDBox {
+    overflow: hidden;
+    @include flexCol03(6px);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 100%;
+    color: #707070;
+
+    .ID {
+      width: 94px;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 100%;
+      color: #000;
+    }
+  }
+}
+
+// Around 프로필 이미지 공통 영역
+.allBtn {
+  @include flexCtr(0);
+  width: 50px;
+  height: 48px;
+  background: #8265F6;
+  box-shadow: 0px 12px 12px rgba(130, 101, 246, 0.25);
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 100%;
+  color: #fff;
+}
+
+.Profile-set {
+  position: relative;
+  @include flexCol(11px);
+  align-items: unset;
+
+  .Profile-img {
+    position: relative;
+    width: 50px;
+    height: 48px;
+    border-radius: 20px;
+  }
+
+  &::before {
+    content: '';
+    @include LtCon(0, 0, 1);
+    width: 22px;
+    height: 22px;
+    margin-top: 32px;
+    margin-left: 35px;
+    background: #fff;
+    border: 1px solid #fff;
+    border-radius: 50px;
+  }
+
+  .Profile-mark {
+    @include LtCon(36px, 40px, 2);
+    width: 12px;
+    height: 12px;
+  }
+}
+
+// 메인 중앙 팝업창 하단 공통 영역
+.PopFooter {
+  @include flexSa(0);
+  width: 100%;
+  padding: 20px 0;
+  background: #F8F8F8;
+
+  button {
+    position: relative;
+    @include flexCol(6px);
+
+    .markRd {
+      top: 0.5px;
+      left: 19.7px;
+      width: 5.16px;
+      height: 5.16px;
+    }
+  }
+}
+
+// 공통 버튼
+button[class*="sec-btn"] {
+  position: relative;
+  width: 100px;
+  padding: 12px;
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 999px;
+}
+
+button[class*="100"] {
+  width: 100%;
+  border-radius: 0;
+}
+
+button[class*="-L"] {
+  width: 335px;
+  padding: 18px;
+}
+
+button[class*="-M"] {
+  width: 162px;
+  padding: 19px;
+}
+
+button[class*="on02"] {
+  color: #fff;
+  border: 1px solid #8265F6;
+  background: #8265F6;
+}
+
+button[class*="on01"] {
+  color: #8265F6;
+  border: 1px solid #8265F6;
+}
+
+button[class*="off01"] {
+  color: #ddd;
+  border: 1px solid #ddd;
+}
+
+button[class*="off02"] {
+  border: 1px solid #bbb;
+}
+
+button[class*="off03"] {
+  background: #eee;
+  color: #fff;
+  border: 1px solid #eee;
+}
+
+button[class*="off04"] {
+  background: #eee;
+  color: #373C45;
+  opacity: 0.4;
+  border: 1px solid #eee;
+}
+
+button[class*="off05"] {
+  background: #F0F0F0;
+  ;
+  color: #333333;
+  border: 0;
+}
+
+.sec-btn.on {
+  color: #8265F6;
+  border: 1px solid #8265F6;
+}
+
+.sec-btn.on-02 {
+  color: #fff;
+  border: 1px solid #8265F6;
+  background: #8265F6;
+}
+
+.sec-btn.off {
+  color: #ddd;
+  border: 1px solid #ddd;
+}
+
+.sec-btn.off-02 {
+  border: 1px solid #bbb;
+}
+
+.sec-btn.plus {
+  padding-left: 20px;
+  color: #8265F6;
+  border: 1px solid #8265F6;
+}
+
+// .plus::before{content:'';@include bg('plus-pu');@include LtCon(15px, 18px, 0); width: 10px;height: 10px;}
+// .Reg-btn{width: 335px;padding: 18px 0 17px 0;margin-bottom: 30px;}
+.Lbtns {
+  @include flexCtr(11px);
+
+  button {
+    width: 162px;
+    padding: 19px 0 20px;
+  }
+}
+
+// 포인트 박스
+.Point {
+  @include flexCtr(3px);
+  padding: 7px 13px 8px;
+  background: linear-gradient(272.69deg, #10DFA8 -7.79%, #6F0EEC 35.92%, #A93AFC 73.24%, #F659FF 103.12%);
+  border-radius: 99px;
+  p{
+    padding-top: 2px;
+  }
+}
+
+// 마이 프로필 인풋 공통영역
+.form-list {
+  @include flexCol03(24px);
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+
+  .form-label {
+    display: flex;
+    gap: 6px;
+  }
+
+  .form-group {
+    @include flexSb(0);
+    padding-bottom: 8px;
+    border-bottom: 1px solid #E6E8F1;
+
+    .form-control {
+      padding-left: 5px;
+      border: 0;
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 100%;
+        color: rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+}
+
+// 메세지 팝업 공통 영역
+.con-wrap {
+  @include flexCol02(0);
+  overflow: hidden;
+  height: auto;
+  max-height: 587px;
+  padding: 20px 5px 20px 70px;
+
+  .con-inner {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    gap: 40px;
+    max-height: 589px;
+    padding: 0px 61px 0 0;
+  }
+
+  .con-inner-col {
+    @include flexCol03(15px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 589px;
+    padding: 0px 61px 0 0;
+
+    li {
+      @include flexArCtr(0);
+      transition: all ease .3s 0s;
+    }
+  }
+
+  // 프로필 이미지/아이디 세트 공통영역
+  .Profile-box {
+    @include flexArCtr(12px);
+    margin-right: 150px;
+    transition: all ease .3s 0s;
+
+    .Profile-set::before {
+      display: none;
+    }
+
+    .Profile-set {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      width: 60px;
+      height: 60px;
+      border-radius: 20px;
+
+      img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .Profile-check-bg {
+        @include BtRtCon(-3px, -5px, 1);
+        width: 22px;
+        height: 22px;
+        background: #fff;
+        border: 1px solid #fff;
+        border-radius: 50px;
+      }
+
+      [class*="mark"] {
+        width: 10px;
+        height: 10px;
+        top: 47px;
+        left: 49px;
+        z-index: 1;
+      }
+    }
+
+    .Profile-set.img-set4 img {
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+    }
+
+    .Profile-set.img-set2 {
+      img {
+        width: 38px;
+        height: 38px;
+        border-radius: 14px;
+      }
+
+      img:last-child {
+        @include LtCon(20px, 22px, 0);
+        border: 2px solid #fff;
+      }
+    }
+
+    .IDBox {
+      @include flexCol02(7px);
+
+      .message-txt {
+        width: 379px;
+        @include ellipsis(2);
+        line-height: 140%;
+      }
+    }
+  }
+}
+
+.form-check {
+  position: absolute;
+  bottom: 32px;
+  right: 40px;
+  z-index: 1;
+
+  input[type="checkbox"]+label:before {
+    content: ' ';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    text-align: center;
+    vertical-align: middle;
+    background: #fff;
+    border: 1px solid #E2E2E2;
+    border-radius: 3px;
+    margin-right: 6px;
+  }
+
+  input[type="checkbox"]:checked+label:before {
+    content: '\2714';
+    color: #8265F6;
+  }
+}
+
+//토글 박스
+.toggle_box {
+  @include flexArCtr(10px);
+
+  label {
+    right: 9px;
+    bottom: 9px;
+    display: flex;
+    align-items: center;
+
+    span {
+      order: 0;
+      color: #fff;
+
+      font: {
+        size: 20px;
+        weight: 500;
+      }
+
+      ;
+      margin-right: 10px;
+    }
+
+    input {
+      &:checked~i {
+        &::before {
+          background-color: #8265F6;
+        }
+
+        &::after {
+          transform: translateX(100%);
+        }
+      }
+    }
+
+    i {
+      position: relative;
+      display: block;
+      width: 37px;
+      height: 20px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 14px;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #D0D0D0;
+        transition: background-color 0.3s;
+      }
+
+      &::after {
+        content: '';
+        position: relative;
+        display: block;
+        width: 14px;
+        height: 14px;
+        margin: 3px;
+        border-radius: 10px;
+        background-color: #fff;
+        transition: transform 0.3s;
+      }
+    }
+  }
+}
+
+.Alarm {
+  @include AlarmCon();
+  text-align: center;
+
+  dl {
+    padding: 30px 17px;
+  }
+
+  dt {
+    position: relative;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 100%;
+    color: #222222;
+    padding-bottom: 11px;
+  }
+
+  dd {
+    position: relative;
+  }
+
+  .write-box {
+    width: 100%;
+    padding: 17px 18px 15px;
+    text-align: left;
+    border: 1px solid #E2E2E2;
+    border-radius: 20px;
+    background: #fff;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 100%;
+      color: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .Dday {
+    padding: 0;
+    width: 100%;
+    height: 60px;
+    @include flexCtr(31px);
+
+    div {
+      @include flexCtr(6px);
+
+      textarea {
+        width: 70px;
+        height: 60px;
+        padding: 13px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 100%;
+        color: #8265F6;
+
+        &::placeholder {
+          font-weight: 700;
+          font-size: 32px;
+          line-height: 100%;
+          color: rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 100%;
+        color: rgba(0, 0, 0, 0.8);
+      }
+    }
+  }
+
+  .sec-time {
+    @include RtCon(19px, 20px, 0);
+  }
+
+  .sec-desc {
+    display: flex;
+    padding-top: 8px;
+  }
+
+  .Alarm-Btns {
+    width: 100%;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 100%;
+
+    button {
+      padding: 18.5px;
+      width: 50%;
+    }
+
+    button:first-child {
+      color: #333;
+      background: #E5E5E5;
+      border-radius: 0px 0px 0px 10px;
+    }
+
+    button:last-child {
+      color: #fff;
+      background: #8265F6;
+      border-radius: 0px 0px 10px 0px;
+    }
+  }
+}
+
+.Alarm.ty-02 {
+  width: 500px;
+
+  dl {
+    padding-bottom: 22px;
+  }
+
+  dt {
+    margin-bottom: 11px;
+  }
+
+  dd {
+    line-height: 100%;
+    word-break: keep-all;
+  }
+
+  dd:nth-of-type(2) {
+    padding: 20px 0 11px;
+  }
+
+  dd:nth-of-type(3) {
+    width: 330px;
+    margin: 0 auto;
+  }
+}

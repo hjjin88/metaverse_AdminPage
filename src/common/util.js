@@ -8,8 +8,8 @@ export function importJs(id, src) {
     if(src) {
       var script = document.createElement("script");
       script.id = id;
-      script.type = "text/javascript";
-      // script.type = "text/babel";
+      // script.type = "text/javascript";
+      script.type = "text/babel";
       script.src = src;
       document.head.appendChild(script);
     }
