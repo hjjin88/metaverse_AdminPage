@@ -1,0 +1,118 @@
+
+$res_root: 'http://localhost:3000';
+
+
+// 백그라운드 
+@mixin bg($name, $path: $res_root +"/resources/images/", $format: "png") {
+    background: url("#{$path}#{$name}.#{$format}") center no-repeat;
+    border: none;
+  }
+  
+  // absolute
+  @mixin RtCon($top, $Rt, $zIndex) {
+    position: absolute;
+    top: $top;
+    right: $Rt;
+    z-index: $zIndex;
+  }
+  
+  @mixin LtCon($top, $Lt, $zIndex) {
+    position: absolute;
+    top: $top;
+    left: $Lt;
+    z-index: $zIndex;
+  }
+  
+  @mixin BtLtCon($Bt, $Lt, $zIndex) {
+    position: absolute;
+    bottom: $Bt;
+    left: $Lt;
+    z-index: $zIndex;
+  }
+  
+  @mixin BtRtCon($Bt, $Rt, $zIndex) {
+    position: absolute;
+    bottom: $Bt;
+    right: $Rt;
+    z-index: $zIndex;
+  }
+  
+  // flex
+  @mixin flexArCtr($gap) {
+    display: flex;
+    align-items: center;
+    gap: $gap;
+  }
+  
+  @mixin flexCtr($gap) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $gap;
+  }
+  
+  @mixin flexCol($gap) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: $gap;
+  }
+  
+  @mixin flexCol02($gap) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: $gap;
+  }
+  
+  @mixin flexCol03($gap) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+  }
+  
+  @mixin flexCol04($gap) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: $gap;
+  }
+  
+  @mixin flexSb($gap) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $gap;
+  }
+  
+  @mixin flexSa($gap) {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: $gap;
+  }
+  
+  @mixin flexFs($gap) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: $gap;
+  }
+  
+  // 말줄임
+  @mixin ellipsis($line: 1) {
+    @if ($line ==1) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  
+    @else {
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: $line;
+    }
+  }
